@@ -1,11 +1,26 @@
-GET https://collectionapi.metmuseum.org/public/collection/v1/objects/283717
-content-type: application/json
+GET https://3245-coffee-narwhal-hruep60n.ws-us20.gitpod.io/objects
 
-{
-    "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
-}
+
+
+# content-type: application/json
+
+# {
+#     "name": "sample",
+#     "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+# }
+
+
+# ###
+# POST https://3245-coffee-narwhal-hruep60n.ws-us20.gitpod.io/
+# content-type: application/json
+
+# {
+#     "label": "another object",
+#     "done": true
+# }
 
 
 ###
+
+
 

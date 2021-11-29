@@ -1,5 +1,6 @@
-from flask import Flask
+from flask import Flask,jsonify
 from flask import request
+
 
 app = Flask(__name__)
 
@@ -9,16 +10,17 @@ objects = [
     { "objects": "My second object", "objectID": True }
 ]
 
+
 @app.route('/objects', methods=['GET'])
 def get_objects():
-  return jsonify(todos)
+  return jsonify(objects)
 
 
- @app.route('/objects', methods=['POST'])
-def add_new_object():
-    request_body = request.get_json(force=True)
-    objects.append(request_body)
-    return jsonify(objects)
+# @app.route('/objects', methods=['POST'])
+# def add_new_object():
+#     request_body = request.get_json(force=True)
+#     objects.append(request_body)
+#     return jsonify(objects)
 
 
 
