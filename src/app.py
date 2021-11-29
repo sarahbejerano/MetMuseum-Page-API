@@ -1,9 +1,38 @@
 from flask import Flask
+from flask import request
+
 app = Flask(__name__)
 
-@app.route('/blabla', methods=['GET'])
-def hello_world():
-    return 'Hello, World!'
+
+objects = [
+    { "objects": "My first object", "objectID": True },
+    { "objects": "My second object", "objectID": True }
+]
+
+@app.route('/objects', methods=['GET'])
+def get_objects():
+  return jsonify(todos)
+
+
+ @app.route('/objects', methods=['POST'])
+def add_new_object():
+    request_body = request.get_json(force=True)
+    objects.append(request_body)
+    return jsonify(objects)
+
+
+
+
+
+
+
+
+if __name__ == '__main__':
+  app.run(host='0.0.0.0', port=3245, debug=True)
+
+# @app.route('/blabla', methods=['GET'])
+# def hello_world():
+#     return 'Hello, World!'
 
 
 # # def hello_world():
@@ -16,7 +45,11 @@ def hello_world():
 #     # y luego puedes retornarla (return) en el response body así:
 #     return json_text
 
-
+# @app.route('/todos', methods=['POST'])
+# def add_new_todo():
+#     request_body = request.data
+#     print("Incoming request with the following body", request_body)
+#     return 'Response for the POST todo'
 
 
 if __name__ == '__main__':
